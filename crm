@@ -1,0 +1,219 @@
+
+openapi: 3.0.0
+info:
+  title: Zoho CRM API
+  version: 1.0.0
+servers:
+  - url: https://accounts.zoho.com/crm/v7
+
+paths:
+  /users:
+    post:
+      summary: İstifadəçi hesabının yaradılması
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                name:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: number
+                is_active:
+                  type: boolean
+      responses:
+        '200':
+          description: User created successfully
+        '400':
+          description: Invalid data
+    get:
+      summary: İstifadəçi hesablarının əldə edilməsi
+      responses:
+        '200':
+          description: List of users
+        '401':
+          description: Authentication failed
+    put:
+      summary: İstifadəçi hesabının redaktə edilməsi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      phone:
+                        type: string
+                      dob:
+                        type: string
+                        format: date
+                      name_format__s:
+                        type: string
+                      sort_order_preference__s:
+                        type: string
+      responses:
+        '200':
+          description: User updated
+        '401':
+          description: Authentication failed
+
+  /settings/modules/Contacts:
+    get:
+      summary: Kontakt məlumatlarının əldə edilməsi
+      responses:
+        '200':
+          description: Məlumat uğurla alındı
+        '401':
+          description: Authentication failed
+    post:
+      summary: Yeni kontakt əlavə edilməsi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                First_Name:
+                  type: string
+                Last_Name:
+                  type: string
+                Email:
+                  type: string
+                Phone_Number:
+                  type: string
+                Address:
+                  type: string
+      responses:
+        '200':
+          description: Contact added successfully
+        '400':
+          description: Invalid request
+
+  /Products:
+    post:
+      summary: Yeni məhsulun yaradılması
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Product_ID:
+                  type: string
+                Product_Name:
+                  type: string
+                Product_Category:
+                  type: string
+                Sales_Start_Date:
+                  type: string
+                  format: date
+                Sales_End_Date:
+                  type: string
+                  format: date
+                Quantity:
+                  type: integer
+                Description:
+                  type: string
+      responses:
+        '200':
+          description: Məhsul uğurla əlavə olundu
+        '400':
+          description: Yanlış sorğu
+
+  /Campaigns:
+    post:
+      summary: Yeni kampaniyanın yaradılması
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Campaign_ID:
+                  type: string
+                Campaign_Name:
+                  type: string
+                Start_Date:
+                  type: string
+                  format: date
+                End_Date:
+                  type: string
+                  format: date
+                Type:
+                  type: string
+                Description:
+                  type: string
+                Products:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Kampaniya uğurla əlavə olundu
+        '400':
+          description: Yanlış məlumat
+
+  /Cases:
+    post:
+      summary: Yeni sorğunun yaradılması
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Subject:
+                        type: string
+                      Description:
+                        type: string
+                      Status:
+                        type: string
+                      Product_name:
+                        type: array
+                        items:
+                          type: string
+                      Email:
+                        type: string
+                      Type:
+                        type: string
+                      Account_Name:
+                        type: string
+      responses:
+        '200':
+          description: Sorğu uğurla əlavə olundu
+        '400':
+          description: Yanlış sorğu
+        '401':
+          description: Doğrulama uğursuz oldu
+
+  /settings/roles:
+    get:
+      summary: İstifadəçi rollarının siyahısı
+      responses:
+        '200':
+          description: Rollar uğurla alındı
+        '401':
+          description: Doğrulama uğursuz oldu
+
