@@ -1,0 +1,2237 @@
+openapi: 3.1.0
+info:
+  version: '1.0'
+  title: CRM REST APİ
+  summary: test
+  description: ''
+servers:
+  - url: 'https://www.zohoapis.com/crm/v7'
+    description: ' api'
+paths:
+  /crm/v7/allusers:
+    get:
+      tags:
+        - Users
+      summary: users
+      operationId: get-crm-v7
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            examples:
+              - 1000.cf40aa8e7620b2435e4d60ce53e5b833.156fe21bc87dd4bda3e29d1ab9dfd0d5
+        - name: type
+          in: query
+          description: AllUsers
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        country:
+                          type: string
+                        name_format__s:
+                          type: string
+                        language:
+                          type: string
+                        microsoft:
+                          type: boolean
+                        $shift_effective_from:
+                          type: 'null'
+                        id:
+                          type: string
+                        state:
+                          type: string
+                        fax:
+                          type: 'null'
+                        country_locale:
+                          type: string
+                        sandboxDeveloper:
+                          type: boolean
+                        zip:
+                          type: 'null'
+                        decimal_separator:
+                          type: string
+                        created_time:
+                          type: string
+                        time_format:
+                          type: string
+                        offset:
+                          type: integer
+                        profile:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                        created_by:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                        zuid:
+                          type: string
+                        full_name:
+                          type: string
+                        phone:
+                          type: 'null'
+                        dob:
+                          type: 'null'
+                        sort_order_preference__s:
+                          type: string
+                        status:
+                          type: string
+                        type__s:
+                          type: string
+                        role:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                        customize_info:
+                          type: object
+                          properties:
+                            notes_desc:
+                              type: 'null'
+                            show_right_panel:
+                              type: 'null'
+                            bc_view:
+                              type: 'null'
+                            show_home:
+                              type: boolean
+                            show_detail_view:
+                              type: boolean
+                            show_left_panel:
+                              type: boolean
+                            unpin_recent_item:
+                              type: 'null'
+                        city:
+                          type: 'null'
+                        signature:
+                          type: 'null'
+                        locale:
+                          type: string
+                        personal_account:
+                          type: boolean
+                        Isonline:
+                          type: boolean
+                        default_tab_group:
+                          type: string
+                        Modified_By:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                        street:
+                          type: 'null'
+                        $current_shift:
+                          type: 'null'
+                        alias:
+                          type: 'null'
+                        theme:
+                          type: object
+                          properties:
+                            normal_tab:
+                              type: object
+                              properties:
+                                font_color:
+                                  type: string
+                                background:
+                                  type: string
+                            selected_tab:
+                              type: object
+                              properties:
+                                font_color:
+                                  type: string
+                                background:
+                                  type: string
+                            new_background:
+                              type: 'null'
+                            background:
+                              type: string
+                            screen:
+                              type: string
+                            type:
+                              type: string
+                        first_name:
+                          type: string
+                        email:
+                          type: string
+                        status_reason__s:
+                          type: 'null'
+                        website:
+                          type: 'null'
+                        Modified_Time:
+                          type: string
+                        $next_shift:
+                          type: 'null'
+                        mobile:
+                          type: 'null'
+                        last_name:
+                          type: string
+                        time_zone:
+                          type: string
+                        number_separator:
+                          type: string
+                        confirm:
+                          type: boolean
+                        date_format:
+                          type: string
+                  info:
+                    type: object
+                    properties:
+                      per_page:
+                        type: integer
+                      count:
+                        type: integer
+                      page:
+                        type: integer
+                      more_records:
+                        type: boolean
+                x-examples:
+                  Example 1:
+                    users:
+                      - country: AZ
+                        name_format__s: 'Salutation,First Name,Last Name'
+                        language: en_US
+                        microsoft: false
+                        $shift_effective_from: null
+                        id: '6694292000000503001'
+                        state: Baki
+                        fax: null
+                        country_locale: en_US
+                        sandboxDeveloper: false
+                        zip: null
+                        decimal_separator: Period
+                        created_time: '2025-03-15T22:48:00+04:00'
+                        time_format: 'hh:mm a'
+                        offset: 14400000
+                        profile:
+                          name: Administrator
+                          id: '6694292000000026011'
+                        created_by:
+                          name: sevda memmedova
+                          id: '6694292000000503001'
+                        zuid: '881512942'
+                        full_name: sevda memmedova
+                        phone: null
+                        dob: null
+                        sort_order_preference__s: 'First Name,Last Name'
+                        status: active
+                        type__s: Regular User
+                        role:
+                          name: CEO
+                          id: '6694292000000026005'
+                        customize_info:
+                          notes_desc: null
+                          show_right_panel: null
+                          bc_view: null
+                          show_home: false
+                          show_detail_view: true
+                          show_left_panel: true
+                          unpin_recent_item: null
+                        city: null
+                        signature: null
+                        locale: en_US
+                        personal_account: true
+                        Isonline: false
+                        default_tab_group: '0'
+                        Modified_By:
+                          name: sevda memmedova
+                          id: '6694292000000503001'
+                        street: null
+                        $current_shift: null
+                        alias: null
+                        theme:
+                          normal_tab:
+                            font_color: '#FFFFFF'
+                            background: '#222222'
+                          selected_tab:
+                            font_color: '#FFFFFF'
+                            background: '#222222'
+                          new_background: null
+                          background: '#F3F0EB'
+                          screen: fixed
+                          type: default
+                        first_name: sevda
+                        email: mammadovasevda37@gmail.com
+                        status_reason__s: null
+                        website: null
+                        Modified_Time: '2025-03-15T22:48:52+04:00'
+                        $next_shift: null
+                        mobile: null
+                        last_name: memmedova
+                        time_zone: Asia/Baku
+                        number_separator: Comma
+                        confirm: true
+                        date_format: MM/dd/yyyy
+                    info:
+                      per_page: 200
+                      count: 1
+                      page: 1
+                      more_records: false
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: AUTHENTICATION_FAILURE
+                    details: {}
+                    message: Authentication failed
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/users:
+    post:
+      tags:
+        - Users
+      summary: users
+      operationId: post-crm-v7
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                      first_name:
+                        type: string
+                      email:
+                        type: string
+                      profile:
+                        type: string
+                      last_name:
+                        type: string
+                      name_format__s:
+                        type: string
+                      sort_order_preference__s:
+                        type: string
+              x-examples:
+                Example 1:
+                  users:
+                    - role: '{{role_id}}'
+                      first_name: Patricia
+                      email: Patricia@abcl.com
+                      profile: '{{profile_id}}'
+                      last_name: Boyle
+                      name_format__s: 'Salutation,First Name,Last Name'
+                      sort_order_preference__s: 'First Name,Last Name'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    users:
+                      - code: SUCCESS
+                        details:
+                          id: '6694292000000724001'
+                        message: User added
+                        status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            expected_data_type:
+                              type: string
+                            api_name:
+                              type: string
+                            json_path:
+                              type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    users:
+                      - code: INVALID_DATA
+                        details:
+                          expected_data_type: bigint
+                          api_name: role
+                          json_path: '$.users[0].role'
+                        message: invalid data
+                        status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  crm/v7/AllContacts:
+    get:
+      tags:
+        - Contacts
+      summary: contacts
+      operationId: get-crm-v7-settings-modules-Contacts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  modules:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        private_profile:
+                          type: 'null'
+                        global_search_supported:
+                          type: boolean
+                        activity_badge:
+                          type: string
+                        $field_states:
+                          type: array
+                          items:
+                            type: string
+                        recycle_bin_on_delete:
+                          type: boolean
+                        plural_label:
+                          type: string
+                        presence_sub_menu:
+                          type: boolean
+                        chart_view:
+                          type: boolean
+                        id:
+                          type: string
+                        per_page:
+                          type: integer
+                        $properties:
+                          type: array
+                          items:
+                            type: string
+                        visibility:
+                          type: integer
+                        sub_menu_available:
+                          type: boolean
+                        profiles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              id:
+                                type: string
+                        $on_demand_properties:
+                          type: array
+                          items:
+                            type: string
+                        kanban_view_supported:
+                          type: boolean
+                        web_link:
+                          type: 'null'
+                        lookup_field_properties:
+                          type: object
+                          properties:
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  sequence_number:
+                                    type: integer
+                                  api_name:
+                                    type: string
+                                  id:
+                                    type: string
+                        viewable:
+                          type: boolean
+                        api_name:
+                          type: string
+                        public_fields_configured:
+                          type: boolean
+                        module_name:
+                          type: string
+                        chart_view_supported:
+                          type: boolean
+                        custom_view:
+                          type: object
+                          properties:
+                            display_value:
+                              type: string
+                            created_time:
+                              type: 'null'
+                            access_type:
+                              type: string
+                            criteria:
+                              type: 'null'
+                            system_name:
+                              type: string
+                            sort_by:
+                              type: 'null'
+                            created_by:
+                              type: 'null'
+                            shared_to:
+                              type: 'null'
+                            default:
+                              type: boolean
+                            modified_time:
+                              type: 'null'
+                            name:
+                              type: string
+                            system_defined:
+                              type: boolean
+                            modified_by:
+                              type: 'null'
+                            id:
+                              type: string
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  api_name:
+                                    type: string
+                                  _pin:
+                                    type: boolean
+                                  id:
+                                    type: string
+                            category:
+                              type: string
+                            last_accessed_time:
+                              type: string
+                            locked:
+                              type: boolean
+                            sort_order:
+                              type: 'null'
+                            favorite:
+                              type: 'null'
+                        parent_module:
+                          type: object
+                        status:
+                          type: string
+                        has_more_profiles:
+                          type: boolean
+                        access_type:
+                          type: string
+                        kanban_view:
+                          type: boolean
+                        deletable:
+                          type: boolean
+                        description:
+                          type: 'null'
+                        creatable:
+                          type: boolean
+                        filter_status:
+                          type: boolean
+                        modified_time:
+                          type: 'null'
+                        actual_plural_label:
+                          type: string
+                        lookupable:
+                          type: boolean
+                        isBlueprintSupported:
+                          type: boolean
+                        related_list_properties:
+                          type: object
+                          properties:
+                            sort_by:
+                              type: 'null'
+                            fields:
+                              type: array
+                              items:
+                                type: string
+                            sort_order:
+                              type: 'null'
+                        convertable:
+                          type: boolean
+                        editable:
+                          type: boolean
+                        actual_singular_label:
+                          type: string
+                        display_field:
+                          type: string
+                        search_layout_fields:
+                          type: array
+                          items:
+                            type: string
+                        show_as_tab:
+                          type: boolean
+                        sequence_number:
+                          type: integer
+                        singular_label:
+                          type: string
+                        api_supported:
+                          type: boolean
+                        quick_create:
+                          type: boolean
+                        modified_by:
+                          type: 'null'
+                        generated_type:
+                          type: string
+                        feeds_required:
+                          type: boolean
+                        arguments:
+                          type: array
+                          items:
+                            type: object
+                        profile_count:
+                          type: integer
+                        business_card_field_limit:
+                          type: integer
+                x-examples:
+                  Example 1:
+                    modules:
+                      - private_profile: null
+                        global_search_supported: true
+                        activity_badge: Enabled
+                        $field_states:
+                          - convert_scheduler
+                        recycle_bin_on_delete: true
+                        plural_label: Contacts
+                        presence_sub_menu: true
+                        chart_view: false
+                        id: '6694292000000002179'
+                        per_page: 10
+                        $properties:
+                          - $approval_state
+                          - $is_duplicate
+                          - $currency_symbol
+                          - $zia_owner_assignment
+                          - $review
+                          - $review_process
+                          - $approval
+                          - $in_merge
+                          - $process_flow
+                          - $orchestration
+                          - $pathfinder
+                          - $zia_visions
+                          - $layout_id
+                          - $editable
+                          - $field_states
+                          - $locked_for_me
+                          - $sharing_permission
+                          - $sharing_permission
+                        visibility: 1
+                        sub_menu_available: true
+                        profiles:
+                          - name: Administrator
+                            id: '6694292000000026011'
+                          - name: Standard
+                            id: '6694292000000026014'
+                        $on_demand_properties:
+                          - $blocked_reason
+                          - $client_portal_invited
+                        kanban_view_supported: false
+                        web_link: null
+                        lookup_field_properties:
+                          fields:
+                            - sequence_number: 1
+                              api_name: Full_Name
+                              id: '6694292000000002529'
+                            - sequence_number: 2
+                              api_name: Account_Name
+                              id: '6694292000000002493'
+                            - sequence_number: 3
+                              api_name: Email
+                              id: '6694292000000002497'
+                            - sequence_number: 4
+                              api_name: Phone
+                              id: '6694292000000002503'
+                            - sequence_number: 5
+                              api_name: Owner
+                              id: '6694292000000002485'
+                        viewable: true
+                        api_name: Contacts
+                        public_fields_configured: false
+                        module_name: Contacts
+                        chart_view_supported: true
+                        custom_view:
+                          display_value: All Contacts
+                          created_time: null
+                          access_type: public
+                          criteria: null
+                          system_name: ALLVIEWS
+                          sort_by: null
+                          created_by: null
+                          shared_to: null
+                          default: true
+                          modified_time: null
+                          name: All Contacts
+                          system_defined: true
+                          modified_by: null
+                          id: '6694292000000087529'
+                          fields:
+                            - api_name: Full_Name
+                              _pin: false
+                              id: '6694292000000002529'
+                            - api_name: Account_Name
+                              _pin: false
+                              id: '6694292000000002493'
+                            - api_name: Email
+                              _pin: false
+                              id: '6694292000000002497'
+                            - api_name: Phone
+                              _pin: false
+                              id: '6694292000000002503'
+                            - api_name: Owner
+                              _pin: false
+                              id: '6694292000000002485'
+                          category: public_views
+                          last_accessed_time: '2025-03-24T12:57:43+04:00'
+                          locked: false
+                          sort_order: null
+                          favorite: null
+                        parent_module: {}
+                        status: visible
+                        has_more_profiles: false
+                        access_type: org_based
+                        kanban_view: false
+                        deletable: true
+                        description: null
+                        creatable: true
+                        filter_status: true
+                        modified_time: null
+                        actual_plural_label: Contacts
+                        lookupable: true
+                        isBlueprintSupported: true
+                        related_list_properties:
+                          sort_by: null
+                          fields:
+                            - Full_Name
+                            - Email
+                            - Phone
+                            - Mobile
+                            - Fax
+                          sort_order: null
+                        convertable: false
+                        editable: true
+                        actual_singular_label: Contact
+                        display_field: Full_Name
+                        search_layout_fields:
+                          - Owner
+                          - Account_Name
+                          - Email
+                          - Phone
+                          - Full_Name
+                        show_as_tab: true
+                        sequence_number: 3
+                        singular_label: Contact
+                        api_supported: true
+                        quick_create: true
+                        modified_by: null
+                        generated_type: default
+                        feeds_required: false
+                        arguments: []
+                        profile_count: 2
+                        business_card_field_limit: 5
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: AUTHENTICATION_FAILURE
+                    details: {}
+                    message: Authentication failed
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/Contacts:
+    post:
+      tags:
+        - Contacts
+      summary: contacts
+      operationId: post-crm-v7-Contacts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      First_Name:
+                        type: string
+                      Last_Name:
+                        type: string
+                      Email:
+                        type: string
+                      Phone_Number:
+                        type: string
+                      Address:
+                        type: string
+              x-examples:
+                Example 1:
+                  data:
+                    - First_Name: Elvin
+                      Last_Name: Hüseynov
+                      Email: elvin.huseynov@example.com
+                      Phone_Number: '+994501234567'
+                      Address: 'Bakı, Azərbaycan'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            Modified_Time:
+                              type: string
+                            Modified_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            Created_Time:
+                              type: string
+                            id:
+                              type: string
+                            Created_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    data:
+                      - code: SUCCESS
+                        details:
+                          Modified_Time: '2025-03-29T17:16:15+04:00'
+                          Modified_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          Created_Time: '2025-03-29T17:16:15+04:00'
+                          id: '6694292000000669002'
+                          Created_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                        message: record added
+                        status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      expected_data_type:
+                        type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: INVALID_DATA
+                    details:
+                      expected_data_type: jsonobject
+                    message: body
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/AllProducts:
+    get:
+      tags:
+        - Products
+      summary: products
+      operationId: get-crm-v7-Products
+      requestBody:
+        content:
+          application/x-tex:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  modules:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        private_profile:
+                          type: 'null'
+                        global_search_supported:
+                          type: boolean
+                        activity_badge:
+                          type: string
+                        $field_states:
+                          type: array
+                          items:
+                            type: string
+                        recycle_bin_on_delete:
+                          type: boolean
+                        plural_label:
+                          type: string
+                        presence_sub_menu:
+                          type: boolean
+                        chart_view:
+                          type: boolean
+                        id:
+                          type: string
+                        per_page:
+                          type: integer
+                        $properties:
+                          type: array
+                          items:
+                            type: string
+                        visibility:
+                          type: integer
+                        sub_menu_available:
+                          type: boolean
+                        profiles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              id:
+                                type: string
+                        $on_demand_properties:
+                          type: array
+                          items:
+                            type: string
+                        kanban_view_supported:
+                          type: boolean
+                        web_link:
+                          type: 'null'
+                        lookup_field_properties:
+                          type: object
+                          properties:
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  sequence_number:
+                                    type: integer
+                                  api_name:
+                                    type: string
+                                  id:
+                                    type: string
+                        viewable:
+                          type: boolean
+                        api_name:
+                          type: string
+                        public_fields_configured:
+                          type: boolean
+                        module_name:
+                          type: string
+                        chart_view_supported:
+                          type: boolean
+                        custom_view:
+                          type: object
+                          properties:
+                            display_value:
+                              type: string
+                            created_time:
+                              type: 'null'
+                            access_type:
+                              type: string
+                            criteria:
+                              type: 'null'
+                            system_name:
+                              type: string
+                            sort_by:
+                              type: 'null'
+                            created_by:
+                              type: 'null'
+                            shared_to:
+                              type: 'null'
+                            default:
+                              type: boolean
+                            modified_time:
+                              type: 'null'
+                            name:
+                              type: string
+                            system_defined:
+                              type: boolean
+                            modified_by:
+                              type: 'null'
+                            id:
+                              type: string
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  api_name:
+                                    type: string
+                                  _pin:
+                                    type: boolean
+                                  id:
+                                    type: string
+                            category:
+                              type: string
+                            last_accessed_time:
+                              type: string
+                            locked:
+                              type: boolean
+                            sort_order:
+                              type: 'null'
+                            favorite:
+                              type: 'null'
+                        parent_module:
+                          type: object
+                        status:
+                          type: string
+                        has_more_profiles:
+                          type: boolean
+                        access_type:
+                          type: string
+                        kanban_view:
+                          type: boolean
+                        deletable:
+                          type: boolean
+                        description:
+                          type: 'null'
+                        creatable:
+                          type: boolean
+                        filter_status:
+                          type: boolean
+                        modified_time:
+                          type: 'null'
+                        actual_plural_label:
+                          type: string
+                        lookupable:
+                          type: boolean
+                        isBlueprintSupported:
+                          type: boolean
+                        related_list_properties:
+                          type: object
+                          properties:
+                            sort_by:
+                              type: 'null'
+                            fields:
+                              type: array
+                              items:
+                                type: string
+                            sort_order:
+                              type: 'null'
+                        convertable:
+                          type: boolean
+                        editable:
+                          type: boolean
+                        actual_singular_label:
+                          type: string
+                        display_field:
+                          type: string
+                        search_layout_fields:
+                          type: array
+                          items:
+                            type: string
+                        show_as_tab:
+                          type: boolean
+                        sequence_number:
+                          type: integer
+                        singular_label:
+                          type: string
+                        api_supported:
+                          type: boolean
+                        quick_create:
+                          type: boolean
+                        modified_by:
+                          type: 'null'
+                        generated_type:
+                          type: string
+                        feeds_required:
+                          type: boolean
+                        arguments:
+                          type: array
+                          items:
+                            type: object
+                        profile_count:
+                          type: integer
+                        business_card_field_limit:
+                          type: integer
+                x-examples:
+                  Example 1:
+                    modules:
+                      - private_profile: null
+                        global_search_supported: true
+                        activity_badge: Enabled
+                        $field_states:
+                          - convert_scheduler
+                        recycle_bin_on_delete: true
+                        plural_label: Contacts
+                        presence_sub_menu: true
+                        chart_view: false
+                        id: '6694292000000002179'
+                        per_page: 10
+                        $properties:
+                          - $approval_state
+                          - $wizard_connection_path
+                          - $is_duplicate
+                          - $cpq_executions
+                          - $currency_symbol
+                          - $zia_owner_assignment
+                          - $review
+                          - $review_process
+                          - $approval
+                          - $in_merge
+                          - $process_flow
+                          - $orchestration
+                          - $pathfinder
+                          - $zia_visions
+                          - $layout_id
+                          - $editable
+                          - $field_states
+                          - $locked_for_me
+                          - $sharing_permission
+                        visibility: 1
+                        sub_menu_available: true
+                        profiles:
+                          - name: Administrator
+                            id: '6694292000000026011'
+                          - name: Standard
+                            id: '6694292000000026014'
+                        $on_demand_properties:
+                          - $blocked_reason
+                          - $client_portal_invited
+                        kanban_view_supported: true
+                        web_link: null
+                        lookup_field_properties:
+                          fields:
+                            - sequence_number: 1
+                              api_name: Full_Name
+                              id: '6694292000000002529'
+                            - sequence_number: 2
+                              api_name: Account_Name
+                              id: '6694292000000002493'
+                            - sequence_number: 3
+                              api_name: Email
+                              id: '6694292000000002497'
+                            - sequence_number: 4
+                              api_name: Phone
+                              id: '6694292000000002503'
+                            - sequence_number: 5
+                              api_name: Owner
+                              id: '6694292000000002485'
+                        viewable: true
+                        api_name: Contacts
+                        public_fields_configured: false
+                        module_name: Contacts
+                        chart_view_supported: true
+                        custom_view:
+                          display_value: All Contacts
+                          created_time: null
+                          access_type: public
+                          criteria: null
+                          system_name: ALLVIEWS
+                          sort_by: null
+                          created_by: null
+                          shared_to: null
+                          default: true
+                          modified_time: null
+                          name: All Contacts
+                          system_defined: true
+                          modified_by: null
+                          id: '6694292000000087529'
+                          fields:
+                            - api_name: Full_Name
+                              _pin: false
+                              id: '6694292000000002529'
+                            - api_name: Account_Name
+                              _pin: false
+                              id: '6694292000000002493'
+                            - api_name: Email
+                              _pin: false
+                              id: '6694292000000002497'
+                            - api_name: Phone
+                              _pin: false
+                              id: '6694292000000002503'
+                            - api_name: Owner
+                              _pin: false
+                              id: '6694292000000002485'
+                          category: public_views
+                          last_accessed_time: '2025-03-24T12:57:43+04:00'
+                          locked: false
+                          sort_order: null
+                          favorite: null
+                        parent_module: {}
+                        status: visible
+                        has_more_profiles: false
+                        access_type: org_based
+                        kanban_view: false
+                        deletable: true
+                        description: null
+                        creatable: true
+                        filter_status: true
+                        modified_time: null
+                        actual_plural_label: Contacts
+                        lookupable: true
+                        isBlueprintSupported: true
+                        related_list_properties:
+                          sort_by: null
+                          fields:
+                            - Full_Name
+                            - Email
+                            - Phone
+                            - Mobile
+                            - Fax
+                          sort_order: null
+                        convertable: false
+                        editable: true
+                        actual_singular_label: Contact
+                        display_field: Full_Name
+                        search_layout_fields:
+                          - Owner
+                          - Account_Name
+                          - Email
+                          - Phone
+                          - Full_Name
+                        show_as_tab: true
+                        sequence_number: 3
+                        singular_label: Contact
+                        api_supported: true
+                        quick_create: true
+                        modified_by: null
+                        generated_type: default
+                        feeds_required: false
+                        arguments: []
+                        profile_count: 2
+                        business_card_field_limit: 5
+        '400':
+          description: Bad Request
+          content:
+            application/x-bittorrent:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      resource_path_index:
+                        type: integer
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: NO_PERMISSION
+                    details:
+                      resource_path_index: 2
+                    message: permission denied to access the module
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/Products:
+    post:
+      tags:
+        - Products
+      summary: products
+      operationId: post-crm-v7-Products
+      requestBody:
+        content:
+          application/x-tex:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      first_name:
+                        type: string
+                      last_name:
+                        type: string
+                      email:
+                        type: string
+                      phone_number:
+                        type: string
+                      address:
+                        type: string
+              x-examples:
+                Example 1:
+                  products:
+                    - first_name: Elvin
+                      last_name: Həseynov
+                      email: elvin.huseynov@example.com
+                      phone_number: '+994501234567'
+                      address: 'Bakı, Azərbaycan'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/x-bittorrent:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            Modified_Time:
+                              type: string
+                            Modified_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            Created_Time:
+                              type: string
+                            id:
+                              type: string
+                            Created_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            $approval_state:
+                              type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    data:
+                      - code: SUCCESS
+                        details:
+                          Modified_Time: '2025-03-29T04:11:23+04:00'
+                          Modified_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          Created_Time: '2025-03-29T04:11:23+04:00'
+                          id: '6694292000000665001'
+                          Created_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          $approval_state: approved
+                        message: record added
+                        status: success
+        '400':
+          description: Bad Request
+          content:
+            application/x-bittorrent:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      expected_data_type:
+                        type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: INVALID_DATA
+                    details:
+                      expected_data_type: jsonobject
+                    message: body
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/AllCampaigns:
+    get:
+      tags:
+        - Campaigns
+      summary: campaign
+      operationId: get-crm-v7-AllCampaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/x-bittorrent:
+              schema:
+                type: object
+                properties:
+                  modules:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        private_profile:
+                          type: 'null'
+                        global_search_supported:
+                          type: boolean
+                        activity_badge:
+                          type: string
+                        $field_states:
+                          type: array
+                          items:
+                            type: string
+                        recycle_bin_on_delete:
+                          type: boolean
+                        plural_label:
+                          type: string
+                        presence_sub_menu:
+                          type: boolean
+                        chart_view:
+                          type: boolean
+                        id:
+                          type: string
+                        per_page:
+                          type: integer
+                        $properties:
+                          type: array
+                          items:
+                            type: string
+                        visibility:
+                          type: integer
+                        sub_menu_available:
+                          type: boolean
+                        profiles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              id:
+                                type: string
+                        $on_demand_properties:
+                          type: array
+                          items:
+                            type: string
+                        kanban_view_supported:
+                          type: boolean
+                        web_link:
+                          type: 'null'
+                        lookup_field_properties:
+                          type: object
+                          properties:
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  sequence_number:
+                                    type: integer
+                                  api_name:
+                                    type: string
+                                  id:
+                                    type: string
+                        viewable:
+                          type: boolean
+                        api_name:
+                          type: string
+                        public_fields_configured:
+                          type: boolean
+                        module_name:
+                          type: string
+                        chart_view_supported:
+                          type: boolean
+                        custom_view:
+                          type: object
+                          properties:
+                            display_value:
+                              type: string
+                            created_time:
+                              type: 'null'
+                            access_type:
+                              type: string
+                            criteria:
+                              type: 'null'
+                            system_name:
+                              type: string
+                            sort_by:
+                              type: 'null'
+                            created_by:
+                              type: 'null'
+                            shared_to:
+                              type: 'null'
+                            default:
+                              type: boolean
+                            modified_time:
+                              type: 'null'
+                            name:
+                              type: string
+                            system_defined:
+                              type: boolean
+                            modified_by:
+                              type: 'null'
+                            id:
+                              type: string
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  api_name:
+                                    type: string
+                                  _pin:
+                                    type: boolean
+                                  id:
+                                    type: string
+                            category:
+                              type: string
+                            last_accessed_time:
+                              type: 'null'
+                            locked:
+                              type: boolean
+                            sort_order:
+                              type: 'null'
+                            favorite:
+                              type: 'null'
+                        parent_module:
+                          type: object
+                        status:
+                          type: string
+                        has_more_profiles:
+                          type: boolean
+                        access_type:
+                          type: string
+                        kanban_view:
+                          type: boolean
+                        deletable:
+                          type: boolean
+                        description:
+                          type: 'null'
+                        creatable:
+                          type: boolean
+                        filter_status:
+                          type: boolean
+                        modified_time:
+                          type: string
+                        actual_plural_label:
+                          type: string
+                        lookupable:
+                          type: boolean
+                        isBlueprintSupported:
+                          type: boolean
+                        related_list_properties:
+                          type: object
+                          properties:
+                            sort_by:
+                              type: 'null'
+                            fields:
+                              type: array
+                              items:
+                                type: string
+                            sort_order:
+                              type: 'null'
+                        convertable:
+                          type: boolean
+                        editable:
+                          type: boolean
+                        actual_singular_label:
+                          type: string
+                        display_field:
+                          type: string
+                        search_layout_fields:
+                          type: array
+                          items:
+                            type: string
+                        show_as_tab:
+                          type: boolean
+                        sequence_number:
+                          type: integer
+                        singular_label:
+                          type: string
+                        api_supported:
+                          type: boolean
+                        quick_create:
+                          type: boolean
+                        modified_by:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                        generated_type:
+                          type: string
+                        feeds_required:
+                          type: boolean
+                        arguments:
+                          type: array
+                          items:
+                            type: object
+                        profile_count:
+                          type: integer
+                        business_card_field_limit:
+                          type: integer
+                x-examples:
+                  Example 1:
+                    modules:
+                      - private_profile: null
+                        global_search_supported: true
+                        activity_badge: Enabled
+                        $field_states:
+                          - convert_scheduler
+                        recycle_bin_on_delete: true
+                        plural_label: Campaigns
+                        presence_sub_menu: true
+                        chart_view: false
+                        id: '6694292000000002183'
+                        per_page: 10
+                        $properties:
+                          - $approval_state
+                          - $currency_symbol
+                          - $review
+                          - $review_process
+                          - $approval
+                          - $in_merge
+                          - $process_flow
+                          - $orchestration
+                          - $pathfinder
+                          - $zia_visions
+                          - $layout_id
+                          - $editable
+                          - $field_states
+                          - $sharing_permission
+                          - $sharing_permission
+                        visibility: 1
+                        sub_menu_available: true
+                        profiles:
+                          - name: Administrator
+                            id: '6694292000000026011'
+                          - name: Standard
+                            id: '6694292000000026014'
+                        $on_demand_properties:
+                          - $blocked_reason
+                        kanban_view_supported: false
+                        web_link: null
+                        lookup_field_properties:
+                          fields:
+                            - sequence_number: 1
+                              api_name: Campaign_Name
+                              id: '6694292000000002651'
+                            - sequence_number: 2
+                              api_name: Type
+                              id: '6694292000000002649'
+                            - sequence_number: 3
+                              api_name: Status
+                              id: '6694292000000002653'
+                            - sequence_number: 4
+                              api_name: Start_Date
+                              id: '6694292000000002655'
+                            - sequence_number: 5
+                              api_name: End_Date
+                              id: '6694292000000002657'
+                            - sequence_number: 6
+                              api_name: Owner
+                              id: '6694292000000002647'
+                        viewable: true
+                        api_name: Campaigns
+                        public_fields_configured: false
+                        module_name: Campaigns
+                        chart_view_supported: true
+                        custom_view:
+                          display_value: All Campaigns
+                          created_time: null
+                          access_type: public
+                          criteria: null
+                          system_name: ALLVIEWS
+                          sort_by: null
+                          created_by: null
+                          shared_to: null
+                          default: true
+                          modified_time: null
+                          name: All Campaigns
+                          system_defined: true
+                          modified_by: null
+                          id: '6694292000000087609'
+                          fields:
+                            - api_name: Campaign_Name
+                              _pin: false
+                              id: '6694292000000002651'
+                            - api_name: Type
+                              _pin: false
+                              id: '6694292000000002649'
+                            - api_name: Status
+                              _pin: false
+                              id: '6694292000000002653'
+                            - api_name: Start_Date
+                              _pin: false
+                              id: '6694292000000002655'
+                            - api_name: End_Date
+                              _pin: false
+                              id: '6694292000000002657'
+                            - api_name: Owner
+                              _pin: false
+                              id: '6694292000000002647'
+                          category: public_views
+                          last_accessed_time: null
+                          locked: false
+                          sort_order: null
+                          favorite: null
+                        parent_module: {}
+                        status: visible
+                        has_more_profiles: false
+                        access_type: org_based
+                        kanban_view: false
+                        deletable: true
+                        description: null
+                        creatable: true
+                        filter_status: true
+                        modified_time: '2025-03-24T00:44:05+04:00'
+                        actual_plural_label: Campaigns
+                        lookupable: true
+                        isBlueprintSupported: true
+                        related_list_properties:
+                          sort_by: null
+                          fields:
+                            - Campaign_Name
+                            - Status
+                            - Type
+                            - Start_Date
+                            - End_Date
+                            - Expected_Revenue
+                            - Budgeted_Cost
+                          sort_order: null
+                        convertable: false
+                        editable: true
+                        actual_singular_label: Campaign
+                        display_field: Campaign_Name
+                        search_layout_fields:
+                          - Owner
+                          - Type
+                          - Campaign_Name
+                          - Status
+                          - Start_Date
+                          - End_Date
+                        show_as_tab: true
+                        sequence_number: 16
+                        singular_label: Campaign
+                        api_supported: true
+                        quick_create: true
+                        modified_by:
+                          name: sevda memmedova
+                          id: '6694292000000503001'
+                        generated_type: default
+                        feeds_required: false
+                        arguments: []
+                        profile_count: 2
+                        business_card_field_limit: 5
+        '400':
+          description: Bad Request
+          content:
+            application/x-bittorrent:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      expected_data_type:
+                        type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: INVALID_DATA
+                    details:
+                      expected_data_type: jsonobject
+                    message: body
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/Campaigns:
+    post:
+      tags:
+        - Campaigns
+      summary: cases
+      operationId: post-crm-v7-Campaigns
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Campaign_ID:
+                        type: string
+                      Campaign_Name:
+                        type: string
+                      Start_Date:
+                        type: string
+                      End_Date:
+                        type: string
+                      Type:
+                        type: string
+                      Description:
+                        type: string
+                      Products:
+                        type: array
+                        items:
+                          type: string
+              x-examples:
+                Example 1:
+                  data:
+                    - Campaign_ID: CMPN-001
+                      Campaign_Name: Yay Endirimi 2025
+                      Start_Date: '2025-06-01'
+                      End_Date: '2025-06-30'
+                      Type: Endirim Kampaniyası
+                      Description: Bu kampaniya yay mövsümünə özəl olaraq 30% endirim təqdim edir.
+                      Products:
+                        - '6694292000000659001'
+                        - '6694292000000659002'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            Modified_Time:
+                              type: string
+                            Modified_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            Created_Time:
+                              type: string
+                            id:
+                              type: string
+                            Created_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            $approval_state:
+                              type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    data:
+                      - code: SUCCESS
+                        details:
+                          Modified_Time: '2025-03-29T01:59:33+04:00'
+                          Modified_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          Created_Time: '2025-03-29T01:59:33+04:00'
+                          id: '6694292000000659001'
+                          Created_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          $approval_state: approved
+                        message: record added
+                        status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      expected_data_type:
+                        type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: INVALID_DATA
+                    details:
+                      expected_data_type: jsonobject
+                    message: body
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/AllCases:
+    get:
+      tags:
+        - Cases
+      summary: cases
+      operationId: get-crm-v7-CAllCases
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Subject:
+                        type: string
+                      Description:
+                        type: string
+                      Status:
+                        type: string
+                      Product_name:
+                        type: array
+                        items:
+                          type: string
+                      Email:
+                        type: string
+                      Type:
+                        type: string
+                      Account_Name:
+                        type: string
+              x-examples:
+                Example 1:
+                  data:
+                    - Subject: Müştəri şikayəti - Ödəmə problemi
+                      Description: Müştəri ödəmə zamanı səhv mesajı alır.
+                      Status: Open
+                      Product_name:
+                        - PRD001
+                        - PRD002
+                      Email: johndoe@example.com
+                      Type: Şikayət
+                      Account_Name: ABC Şirkəti
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        details:
+                          type: object
+                          properties:
+                            Modified_Time:
+                              type: string
+                            Modified_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                            Created_Time:
+                              type: string
+                            id:
+                              type: string
+                            Created_By:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                id:
+                                  type: string
+                        message:
+                          type: string
+                        status:
+                          type: string
+                x-examples:
+                  Example 1:
+                    data:
+                      - code: SUCCESS
+                        details:
+                          Modified_Time: '2025-03-29T23:03:32+04:00'
+                          Modified_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                          Created_Time: '2025-03-29T23:03:32+04:00'
+                          id: '6694292000000685001'
+                          Created_By:
+                            name: sevda memmedova
+                            id: '6694292000000503001'
+                        message: record added
+                        status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                    properties:
+                      expected_data_type:
+                        type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: INVALID_DATA
+                    details:
+                      expected_data_type: jsonobject
+                    message: body
+                    status: error
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: AUTHENTICATION_FAILURE
+                    details: {}
+                    message: Authentication failed
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
+  /crm/v7/Roles:
+    get:
+      tags:
+        - Roles
+      summary: roles
+      operationId: get-crm-v7-Roles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        display_label:
+                          type: string
+                        created_by__s:
+                          type: 'null'
+                        modified_by__s:
+                          type: 'null'
+                        forecast_manager:
+                          type: 'null'
+                        share_with_peers:
+                          type: boolean
+                        api_name:
+                          type: string
+                        modified_time__s:
+                          type: 'null'
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        reporting_to:
+                          type: 'null'
+                        id:
+                          type: string
+                        created_time__s:
+                          type: 'null'
+                x-examples:
+                  Example 1:
+                    roles:
+                      - display_label: CEO
+                        created_by__s: null
+                        modified_by__s: null
+                        forecast_manager: null
+                        share_with_peers: true
+                        api_name: CEO
+                        modified_time__s: null
+                        name: CEO
+                        description: Users with this role have access to the data owned by all other users.
+                        reporting_to: null
+                        id: '6694292000000026005'
+                        created_time__s: null
+                      - display_label: Manager
+                        created_by__s: null
+                        modified_by__s: null
+                        forecast_manager: null
+                        share_with_peers: false
+                        api_name: Manager
+                        modified_time__s: null
+                        name: Manager
+                        description: Users belonging to this role cannot see data for admin users.
+                        reporting_to:
+                          name: CEO
+                          id: '6694292000000026005'
+                        id: '6694292000000026008'
+                        created_time__s: null
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  details:
+                    type: object
+                  message:
+                    type: string
+                  status:
+                    type: string
+                x-examples:
+                  Example 1:
+                    code: AUTHENTICATION_FAILURE
+                    details: {}
+                    message: Authentication failed
+                    status: error
+      servers:
+        - url: 'https://www.zohoapis.com/crm/v7'
+          description: ' api'
